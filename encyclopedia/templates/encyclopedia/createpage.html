@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}nkf
+
+{% block title %}
+    New page
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to new page</h1>
+    <label for="page">New Page Info:</label>
+    <form action="{% url 'createpage' %}" method="post">
+        {% csrf_token %}
+      <input type="text" name="title" placeholder="Enter the title">
+      <br>
+      <textarea name="content" rows="8" cols="80">
+
+      </textarea>
+      <input type="submit" name="" value="Save" >
+    </form>
+
+
+{% endblock %}
